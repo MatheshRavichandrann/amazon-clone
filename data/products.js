@@ -1,6 +1,6 @@
 import { formatCurrency } from "../scripts/utils/money.js";
-export function getProducts(productId){
 
+export function getProducts(productId){
   let matchingProduct;
   products.forEach((product) =>{
     if (product.id === productId)  {
@@ -9,8 +9,6 @@ export function getProducts(productId){
   });
   return matchingProduct;
 }
-
-
 class Product{
   id;
   image;
