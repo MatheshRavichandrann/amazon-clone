@@ -1,7 +1,12 @@
 import { cart } from "../data/cart.js";
-import { products } from "../data/products.js";
+import { products, loadProducts } from "../data/products.js";
 import { addToCart } from "../data/cart.js";
 import { formatCurrency } from "./utils/money.js";
+
+loadProducts(rednerProductsGrid);
+
+function rednerProductsGrid(){
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -80,6 +85,5 @@ document.querySelectorAll('.add-to-cart-button')
     updateCartQuantity();
   });
 });
-
-
+}
 
