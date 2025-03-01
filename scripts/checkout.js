@@ -5,21 +5,34 @@ import { loadCart } from "../data/cart.js";
 // import '../data/cart-oop.js';
 // import  '../data/backend-practice.js';
 
-
-Promise.all([
-  loadProductsFetch(),
-  new Promise((reslove) => {
+async function loadPage(){
+  await loadProductsFetch();
+  await new Promise((reslove) => {
     loadCart(() => {
       reslove();
     }); 
-  })
-
-]).then((values) => {
-  console.log(values);
+  });
   renderOrderSummary();
   renderPaymentSummary();
-  console.log('done'); 
-});
+}
+
+loadPage();
+
+
+// Promise.all([
+//   loadProductsFetch(),
+//   new Promise((reslove) => {
+//     loadCart(() => {
+//       reslove();
+//     }); 
+//   })
+
+// ]).then((values) => {
+//   console.log(values);
+//   renderOrderSummary();
+//   renderPaymentSummary();
+//   console.log('done'); 
+// });
 
 // new Promise((resolve) => {
 //   loadProducts(() => {
