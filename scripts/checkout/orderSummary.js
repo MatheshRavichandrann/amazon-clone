@@ -126,4 +126,3 @@ document.querySelectorAll('.js-delivery-options').forEach((element) => {
 });
 }
 
-renderOrderSummary();

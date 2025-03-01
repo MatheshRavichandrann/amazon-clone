@@ -98,7 +98,6 @@ export function loadProducts(fun){
       if (productDetails.type === 'clothing') {
         return new Clothing(productDetails);  
       }
-    
       return new Product(productDetails);
     });
     console.log('load products');
